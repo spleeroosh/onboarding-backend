@@ -3,6 +3,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -32,6 +34,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         logging: true,
       }),
     }),
+    AuthModule,
+    UsersModule,
   ],
 })
 export class AppModule {}

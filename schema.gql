@@ -1,0 +1,38 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateUserDto {
+  email: String!
+  name: String
+  password: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type LoginResponseDto {
+  accessToken: String!
+  user: UserEntity!
+}
+
+type Mutation {
+  createUser(createUserDto: CreateUserDto!): UserEntity!
+  login(createUserDto: CreateUserDto!): LoginResponseDto!
+  signup(createUserDto: CreateUserDto!): UserEntity!
+}
+
+type Query {
+  getAllUsers: [UserEntity!]!
+}
+
+type UserEntity {
+  createdAt: DateTime!
+  email: String!
+  id: ID!
+  name: String
+  password: String!
+  updatedAt: DateTime!
+}
