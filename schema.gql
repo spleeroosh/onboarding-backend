@@ -13,8 +13,15 @@ A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date
 """
 scalar DateTime
 
+type LoginResponseDto {
+  accessToken: String!
+  user: UserEntity!
+}
+
 type Mutation {
   createUser(createUserDto: CreateUserDto!): UserEntity!
+  login(createUserDto: CreateUserDto!): LoginResponseDto!
+  signup(createUserDto: CreateUserDto!): UserEntity!
 }
 
 type Query {
